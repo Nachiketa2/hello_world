@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap');
+
+:root { --bg: #090b18; --panel: #11152a; --line: #2c3763; --cyan: #54f5e7; --pink: #ff5ca8; --muted: #8a91b5; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; color: #f5f7ff; background: radial-gradient(circle at 20% 10%, #202a5c 0, transparent 35%), radial-gradient(circle at 90% 90%, #41183e 0, transparent 30%), var(--bg); font-family: 'Space Mono', monospace; }
+.game-shell { width: min(92vw, 480px); padding: 28px; text-align: center; }
+.eyebrow { color: var(--cyan); font-size: .7rem; letter-spacing: .22em; }
+h1 { margin: 12px 0 4px; font: 800 clamp(2.6rem, 11vw, 4.3rem)/.95 Syne, sans-serif; letter-spacing: -.08em; }
+h1 span { color: var(--pink); display: block; }
+.subtitle { color: var(--muted); margin: 16px 0 28px; font-size: .78rem; }
+.scoreboard { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 10px; margin-bottom: 22px; }
+.scoreboard strong { display: block; color: var(--cyan); font: 700 1.8rem Syne, sans-serif; }
+.scoreboard div:last-child strong { color: var(--pink); }
+.scoreboard small { color: var(--muted); font-size: .62rem; letter-spacing: .15em; }
+.status { color: #fff; font-size: .72rem; border: 1px solid var(--line); border-radius: 999px; padding: 9px 5px; background: #151a35; }
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 10px; border: 1px solid #273158; border-radius: 22px; background: rgba(17, 21, 42, .8); box-shadow: 0 20px 70px rgba(0,0,0,.35); }
+.cell { aspect-ratio: 1; border: 1px solid var(--line); border-radius: 14px; color: var(--cyan); background: #151a35; cursor: pointer; font: 700 clamp(2.5rem, 15vw, 4.5rem) Syne, sans-serif; transition: transform .15s, border-color .15s, background .15s; }
+.cell:hover:not(:disabled) { transform: translateY(-3px); border-color: var(--cyan); background: #1c254b; }
+.cell.o { color: var(--pink); }
+.cell.win { animation: pulse .7s infinite alternate; border-color: #fff; }
+.cell:disabled { cursor: default; }
+.reset { margin-top: 24px; padding: 13px 24px; border: 0; border-radius: 999px; color: var(--bg); background: var(--cyan); cursor: pointer; font: 700 .78rem 'Space Mono', monospace; box-shadow: 0 0 25px #54f5e755; }
+.reset:hover { filter: brightness(1.12); transform: translateY(-2px); }
+.hint { color: var(--muted); font-size: .68rem; margin-top: 24px; }.x-label { color: var(--cyan); }.o-label { color: var(--pink); }
+@keyframes pulse { to { box-shadow: 0 0 25px #54f5e766; } }
